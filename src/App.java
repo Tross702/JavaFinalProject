@@ -2,12 +2,14 @@
 public class App {
 
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+    
+//Instantiate a Deck and two Players, call the shuffle method on the deck.
     Deck deck = new Deck();
     deck.shuffle();
     Player player1 = new Player("Player1");
     Player player2 = new Player("Player2");
     
+//Using a traditional for loop, iterate 52 times calling the Draw method on the other player each iteration using the Deck you instantiated.  
     for (int i =0; i < 52; i++) {
       if (i % 2 == 0) {
           player1.draw(deck);
@@ -16,13 +18,15 @@ public class App {
       }
     }
     
+//Using a traditional for loop, iterate 26 times and call the flip method for each player.
     for (int i =0; i < 26; i++) {
       Card card1 = player1.flip();
       Card card2 = player2.flip();
       System.out.println("____________________________");
       System.out.println("\nPlayer 1 has " + card1.getName());
       System.out.println("Player 2 has " + card2.getName());
-      
+ 
+//Compare the value of each card returned by the two player’s flip methods. Call the incrementScore method on the player whose card has the higher value.
       if (card1.getValue() > card2.getValue()) {
         player1.incrementScore();
         System.out.println("Player 1 wins!");

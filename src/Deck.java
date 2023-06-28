@@ -6,6 +6,7 @@ import java.util.Random;
 public class Deck {
   private List<Card> cards;
 
+//cards (List of Card) 
   public Deck() {
     cards = new ArrayList<>();
     String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
@@ -36,6 +37,7 @@ public class Deck {
     }
 }
 
+//shuffle (randomizes the order of the cards)
 public void shuffle() {
     Random rand = new Random();
     for (int i = cards.size() - 1; i > 0; i--) {
@@ -46,6 +48,7 @@ public void shuffle() {
     }
 }
 
+//draw (removes and returns the top card of the Cards field)
 public Card draw() {
     return cards.remove(0);
   }
